@@ -5,6 +5,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
 
 dataset = pd.read_csv('Processamento de Dados\Data.csv')                                    #Ler o csv.
 
@@ -33,3 +34,13 @@ le = LabelEncoder() #Instancia classe LabelEncoder
 y = le.fit_transform(y) #Transforma a coluna Dependent Variable para LabelEncoder
 print("\n---------------------LabelEncoder(Transforma no/yes para 0/1)-------------------")
 print(y)
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1) #Fazendo o split aleatorio das matrizes x e y. Mantendo 80% para treino e 20% para testes
+print("\n---------------------X TRAIN-------------------")
+print(x_train)
+print("\n---------------------X TEST-------------------")
+print(x_test)
+print("\n---------------------Y TRAIN-------------------")
+print(y_train)
+print("\n---------------------Y TEST-------------------")
+print(y_test)
