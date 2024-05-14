@@ -18,3 +18,19 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_
 
 regressor = LinearRegression()
 regressor.fit(x_train, y_train)
+
+y_pred = regressor.predict(x_test)
+
+plt.scatter(x_train, y_train, color = 'red')
+plt.plot(x_train, regressor.predict(x_train), color = 'blue')
+plt.title('Salario X Experiencia (Trainning set)')
+plt.xlabel('Anos de Experiencia')
+plt.ylabel('Salario')
+plt.show()
+
+plt.scatter(x_test, y_test, color = 'red')
+plt.plot(x_train, regressor.predict(x_train), color = 'blue')
+plt.title('Salario X Experiencia (Test set)')
+plt.xlabel('Anos de Experiencia')
+plt.ylabel('Salario')
+plt.show()
