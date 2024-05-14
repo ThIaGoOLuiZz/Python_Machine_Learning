@@ -8,7 +8,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-dataset = pd.read_csv('Processamento de Dados\Data.csv')                                    #Ler o csv.
+dataset = pd.read_csv('Data Preprocessing\Data.csv')                                        #Ler o csv.
 
 x = dataset.iloc[:, :-1].values                                                             #Definindo o vetor de features(recursos).
 y = dataset.iloc[:, -1].values                                                              #Definindo o vetor de Dependent Variable (Variavel dependente).
