@@ -6,6 +6,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 dataset = pd.read_csv('Processamento de Dados\Data.csv')                                    #Ler o csv.
 
@@ -44,3 +45,12 @@ print("\n---------------------Y TRAIN-------------------")
 print(y_train)
 print("\n---------------------Y TEST-------------------")
 print(y_test)
+
+sc = StandardScaler() #INSTANCIA STANDARDISATION (PADRONIZAÇÃO) -- COLOCAR OS DADOS NA MESMA ESCALA
+x_train[:, 3:] = sc.fit_transform(x_train[:, 3:]) #CALCULA A MEDIA E O DESVIO PADRÃO DO TREINAMENTO
+x_test[:, 3:] = sc.transform(x_test[:, 3:]) #UTILIZA A MEDIA E O DESVIO PADRÃO PARA TRANSFORMAR O CONJUNTO DE TESTE
+
+print("\n---------------------PADRONIZAÇÃO TREINO-------------------")
+print(x_train)
+print("\n---------------------PADRONIZAÇÃO TESTE-------------------")
+print(x_test)
