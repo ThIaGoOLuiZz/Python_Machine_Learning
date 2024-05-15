@@ -16,10 +16,10 @@ y = dataset.iloc[:, -1].values
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
 
-regressor = LinearRegression()
-regressor.fit(x_train, y_train)
+regressor = LinearRegression() #INSTANCIA CLASSE DE REGRASSÃO LINEAR (LINEAR REGRESSION)
+regressor.fit(x_train, y_train) #MODELO APRENDE COMO OS DADOS ESTÃO RELACIONADOS
 
-y_pred = regressor.predict(x_test)
+y_pred = regressor.predict(x_test) #FAZ UMA PREVISÃO
 
 plt.scatter(x_train, y_train, color = 'red')
 plt.plot(x_train, regressor.predict(x_train), color = 'blue')
