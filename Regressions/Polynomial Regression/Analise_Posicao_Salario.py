@@ -16,3 +16,8 @@ y = dataset.iloc[:, -1].values
 
 lin_reg = LinearRegression()
 lin_reg.fit(x,y)
+
+poly_reg = PolynomialFeatures(degree=2)
+x_poly = poly_reg.fit_transform(x)
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(x_poly, y)
