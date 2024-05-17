@@ -37,3 +37,7 @@ plt.title('Verdade ou mentira (Polynomial Regression)')
 plt.xlabel('Nivel')
 plt.ylabel('Salario')
 plt.show()
+
+print(lin_reg.predict([[6.5]])) #POSIÇÃO 6.5 // LINEAR REGRESSION
+
+print(lin_reg_2.predict(poly_reg.fit_transform([[6.5]]))) #POSIÇÃO 6.5 // POLYNOMIAL REGRESSION
