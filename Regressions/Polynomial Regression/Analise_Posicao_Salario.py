@@ -17,7 +17,7 @@ y = dataset.iloc[:, -1].values
 lin_reg = LinearRegression()
 lin_reg.fit(x,y)
 
-poly_reg = PolynomialFeatures(degree=2)
+poly_reg = PolynomialFeatures(degree=4)
 x_poly = poly_reg.fit_transform(x)
 lin_reg_2 = LinearRegression()
 lin_reg_2.fit(x_poly, y)
@@ -30,3 +30,10 @@ plt.xlabel('Nivel')
 plt.ylabel('Salario')
 plt.show()
 
+# POLYNOMIAL REGRESSION
+plt.scatter(x, y, color = 'red')
+plt.plot(x, lin_reg_2.predict(poly_reg.fit_transform(x)), color = 'blue')
+plt.title('Verdade ou mentira (Polynomial Regression)')
+plt.xlabel('Nivel')
+plt.ylabel('Salario')
+plt.show()
