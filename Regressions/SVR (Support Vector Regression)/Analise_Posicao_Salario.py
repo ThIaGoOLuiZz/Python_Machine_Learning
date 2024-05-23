@@ -19,6 +19,11 @@ regressor = SVR(kernel='rbf')
 regressor.fit(x, y)
 
 y_pred = sc_y.inverse_transform(regressor.predict(sc_x.transform([[6.5]])).reshape(-1, 1))
-
 print(y_pred)
 
+plt.scatter(sc_x.inverse_transform(x), sc_y.inverse_transform(y.reshape(-1, 1)), color='red')
+plt.plot(sc_x.inverse_transform(x), sc_y.inverse_transform(regressor.predict(x).reshape(-1, 1)), color='blue')
+plt.title('Verdade ou mentira (SVR)')
+plt.xlabel('Nível')
+plt.ylabel('Salário')
+plt.show()
