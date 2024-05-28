@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
 
 dataset = pd.read_csv('Regressions\Polynomial Regression\Data.csv')
 x = dataset.iloc[:, :-1].values
@@ -22,3 +23,5 @@ regressor.fit(x_poly,y_train)
 y_pred = regressor.predict(x_test)
 np.set_printoptions(precision=2)
 print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
+
+r2_score(y_test, y_pred)
