@@ -36,7 +36,7 @@ y = le.fit_transform(y) #Transforma a coluna Dependent Variable para LabelEncode
 print("\n---------------------LabelEncoder(Transforma no/yes para 0/1)-------------------")
 print(y)
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1) #Fazendo o split aleatorio das matrizes x e y. Mantendo 80% para treino e 20% para testes
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=0) #Fazendo o split aleatorio das matrizes x e y. Mantendo 80% para treino e 20% para testes
 print("\n---------------------X TRAIN-------------------")
 print(x_train)
 print("\n---------------------X TEST-------------------")
