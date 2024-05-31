@@ -18,3 +18,4 @@ x_test = sc.transform(x_test)
 
 classifier = LogisticRegression(random_state=0)
 classifier.fit(x_train,y_train)
+print(classifier.predict(sc.transform([[30,87000]])))
