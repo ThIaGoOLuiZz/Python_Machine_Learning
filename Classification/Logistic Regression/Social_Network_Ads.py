@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, accuracy_score
 
 dataset = pd.read_csv('Classification\Logistic Regression\Social_Network_Ads.csv')
 
@@ -26,3 +26,5 @@ print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),
 
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
+
+print(accuracy_score(y_test, y_pred))
