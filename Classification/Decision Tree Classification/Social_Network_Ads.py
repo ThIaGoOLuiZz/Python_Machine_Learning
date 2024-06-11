@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import confusion_matrix, accuracy_score
 from matplotlib.colors import ListedColormap
 
@@ -18,7 +18,7 @@ sc = StandardScaler()
 x_train = sc.fit_transform(x_train)
 x_test = sc.transform(x_test)
 
-classifier = KNeighborsClassifier(n_neighbors=5, metric='minkowski', p=2)
+classifier = DecisionTreeClassifier(criterion='entropy',random_state=0)
 classifier.fit(x_train, y_train)
 
 print(classifier.predict(sc.transform([[30, 87000]])))
