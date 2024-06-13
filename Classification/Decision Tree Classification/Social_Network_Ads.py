@@ -7,7 +7,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import confusion_matrix, accuracy_score
 from matplotlib.colors import ListedColormap
 
-dataset = pd.read_csv('Classification\K-Nearest Neighbors (K-NN)\Social_Network_Ads.csv')
+dataset = pd.read_csv('Classification\Decision Tree Classification\Social_Network_Ads.csv')
 
 x = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
