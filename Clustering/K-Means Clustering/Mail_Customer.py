@@ -18,3 +18,6 @@ plt.title('The Elbow Method')
 plt.xlabel('Number of clusters')
 plt.ylabel('WCSS')
 plt.show()
+
+kmeans = KMeans(n_clusters=5,init='k-means++',random_state=42)
+y_kmeans = kmeans.fit_predict(x)
